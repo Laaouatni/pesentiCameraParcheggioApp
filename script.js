@@ -16,7 +16,7 @@ const parkingItems = document.querySelectorAll(".parkingItem");
 
 const ctx = canvasElement.getContext("2d", {
   alpha: false,
-  desynchronized: true,
+  // desynchronized: true,
   willReadFrequently: true,
 });
 
