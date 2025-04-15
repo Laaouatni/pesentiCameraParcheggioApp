@@ -11,7 +11,7 @@ const parkingViewElement = document.getElementById("parkingViewElement");
 const parkingViewElementStyles = parkingViewElement.getBoundingClientRect();
 const parkingItems = document.querySelectorAll(".parkingItem");
 
-const FPS = 60;
+const FPS = 30;
 
 const ctx = canvasElement.getContext("2d", {
   alpha: false,
