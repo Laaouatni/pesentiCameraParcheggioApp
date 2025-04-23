@@ -4,8 +4,8 @@ ws.addEventListener("close", () => {
   window.location.reload();
 });
 
-window.screen.orientation.lock('landscape');
-alert(window.screen.orientation);
+document.documentElement.requestFullscreen();
+window.screen.orientation.lock("landscape");
 
 const canvasElement = document.getElementById("canvasElement");
 const videoElement = document.getElementById("videoElement");
