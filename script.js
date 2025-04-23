@@ -4,6 +4,8 @@ ws.addEventListener("close", () => {
   window.location.reload();
 });
 
+screen.orientation.lock('landscape');
+
 const canvasElement = document.getElementById("canvasElement");
 const videoElement = document.getElementById("videoElement");
 
