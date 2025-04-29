@@ -51,6 +51,7 @@ function srcAnalyzeParkingSlot(ctx, thisParkingItem, parkingViewElementStyles) {
 
     isOccupied = coloredPixelsCount > minColoredPixelsNeeded;
     if (isOccupied) break;
+    
     coloredPixelsCount++;
   }
   return isOccupied;
