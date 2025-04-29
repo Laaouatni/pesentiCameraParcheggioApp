@@ -3,19 +3,16 @@ import { videoElement } from "./src/srcDomCostants.js";
 import { srcFullScreenBtn } from "./src/srcFullScreenBtn.js";
 import { srcActivateVideoCamera } from "./src/srcActivateCamera.js";
 import { srcDontTurnOffTheSite } from "./src/srcDontTurnOffTheSite.js";
+import { srcCreateWebSocketClient } from "./src/srcCreateWebSocketClient.js";
 
-const ws = new WebSocket("wss://pesentiws-43f6274c0f11.herokuapp.com/");
-
-ws.addEventListener("close", () => {
-  window.location.reload();
-});
+const ws = srcCreateWebSocketClient();
 
 srcFullScreenBtn();
 srcDontTurnOffTheSite();
 srcActivateVideoCamera();
 
 videoElement.addEventListener("playing", () => {
-  srcVideoLogic();
+  srcVideoLogic(ws);
 });
 
 // const parkingViewElementStyles = parkingViewElement.getBoundingClientRect();

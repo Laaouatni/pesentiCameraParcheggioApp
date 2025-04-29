@@ -1,15 +1,15 @@
 import { FPS } from "./srcConfigCostants.js";
-import { canvasElement, parkingViewElement } from "./srcDomCostants.js";
 import srcFrameLogic from "./srcFrameLogic.js";
+import { srcResizeVideoCanvas } from "./srcResizeVideoCanvas.js";
 
-function srcVideoLogic() {
-  if (!parkingViewElement) throw new Error("parkingViewElement is not defined");
+function srcVideoLogic(ws) {
+  srcResizeVideoCanvas();
 
-  canvasElement.width = parkingViewElement.clientWidth;
-  canvasElement.height = parkingViewElement.clientHeight;
+  //   let previousFrameArrayToSendToEsp32String = "";
+
 
   setInterval(() => {
-    srcFrameLogic();
+    srcFrameLogic(ws);
   }, 1000 / FPS)
 }
 

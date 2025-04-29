@@ -1,5 +1,4 @@
-function srcFrameLogic() {
-  //   let previousFrameArrayToSendToEsp32String = "";
+function srcFrameLogic(ws) {
   //   setInterval(() => {
   //     ctx.drawImage(
   //       videoElement,
