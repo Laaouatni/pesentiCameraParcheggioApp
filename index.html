@@ -31,19 +31,26 @@
   </main>
   <div id="controlsElement">
     <button id="btnRoutaSchermo">ruota schermo</button>
-    <div>
-      <input type="color" name="blackColorInput" id="blackColorInput" />
-      <label for="blackColorInput">
-        <span>Riferimento Nero:</span>
-        <span id="blackColorInputValue"></span>
-      </label>
+    <div id="riferimentiElement">
+      <span id="riferimentiTitle">Riferimenti:</span>
+      <div>
+        <input type="color" name="blackColorInput" id="blackColorInput" />
+        <label for="blackColorInput">
+          <span>Nero:</span>
+          <span id="blackColorInputValue"></span>
+        </label>
+      </div>
+      <div>
+        <input type="color" name="whiteColorInput" id="whiteColorInput" />
+        <label for="whiteColorInput">
+          <span>Bianco:</span>
+          <span id="whiteColorInputValue"></span>
+        </label>
+      </div>
     </div>
-    <div>
-      <input type="color" name="whiteColorInput" id="whiteColorInput" />
-      <label for="whiteColorInput">
-        <span>Riferimento Bianco:</span>
-        <span id="whiteColorInputValue"></span>
-      </label>
+    <div id="tooleranzaElement">
+      <label for="tooleranzaInput">Tolleranza:</label>
+      <input type="range" name="tooleranzaInput" id="tooleranzaInput" min="0" max="255" value="0" step="1" />
     </div>
   </div>
 </body>
