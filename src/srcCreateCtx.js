@@ -9,6 +9,6 @@ function srcCreateCtx() {
   });
 
   return ctx;
-};
+}
 
 export { srcCreateCtx };

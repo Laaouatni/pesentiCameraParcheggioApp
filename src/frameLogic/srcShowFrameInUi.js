@@ -1,8 +1,8 @@
 import { canvasElement, videoElement } from "../srcDomCostants.js";
 
 /**
- * 
- * @param {CanvasRenderingContext2D} ctx 
+ *
+ * @param {CanvasRenderingContext2D} ctx
  */
 function srcShowImageInUi(ctx) {
   if (!canvasElement) throw new Error("canvasElement is not defined");

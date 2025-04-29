@@ -6,6 +6,6 @@ function srcResizeVideoCanvas() {
 
   canvasElement.width = parkingViewElement.clientWidth;
   canvasElement.height = parkingViewElement.clientHeight;
-};
+}
 
 export { srcResizeVideoCanvas };
