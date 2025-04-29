@@ -3,7 +3,7 @@ import { REFERENCE_COLOR_WHITE, updateReferenceColorWhite } from "./srcConfigCos
 import { DELTA_TOLLERANZA_COLORI, updateDeltaTolleranzaColori } from "./srcConfigCostants.js";
 
 /**
- * @type {Record<string, {input: HTMLInputElement, text: HTMLSpanElement}>}
+ * @type {Record<string, {input: HTMLInputElement, text: HTMLSpanElement, values: {default: number[], update: function}}>}
  */
 export const domColorInputs = {
   black: {
@@ -26,7 +26,7 @@ export const domColorInputs = {
 };
 
 /**
- * @type {{input: HTMLInputElement, text: HTMLSpanElement}}
+ * @type {{input: HTMLInputElement, text: HTMLSpanElement, values: {default: number, update: function}}}
  */
 export const inputConfigTolleranza = {
   input: document.getElementById("inputConfigTolleranza"),
@@ -53,10 +53,14 @@ function srcUpdateColorInputsDinamically() {
     if (!input) throw new Error("input is not defined");
     if (!text) throw new Error("text is not defined");
 
+    input.value = rgbToHex(colorInputObject.values.default);
+    const [defaultR, defaultG, defaultB] = colorInputObject.values.default;
+    text.innerText = `${defaultR}, ${defaultG}, ${defaultB}`;
+
     input.addEventListener("input", () => {
       const thisInputValue = input.value;
       const [R, G, B] = hexToRgb(thisInputValue);
-      text.innerText = `rgb(${R}, ${G}, ${B})`;
+      text.innerText = `${R}, ${G}, ${B}`;
     });
   });
 }
