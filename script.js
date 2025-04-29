@@ -12,6 +12,7 @@ ws.addEventListener("close", () => {
 
 srcFullScreenBtn();
 srcDontTurnOffTheSite();
+srcActivateVideoCamera();
 
 // const parkingViewElementStyles = parkingViewElement.getBoundingClientRect();
 // const parkingItems = document.querySelectorAll(".parkingItem");
@@ -35,7 +36,6 @@ srcDontTurnOffTheSite();
 
 
 
-srcActivateVideoCamera();
 
 // videoElement.addEventListener("playing", () => {
 //   canvasElement.width = parkingViewElement.clientWidth;
