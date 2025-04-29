@@ -1,10 +1,14 @@
 import { canvasElement } from "./srcDomCostants.js";
 
-if (!canvasElement) throw new Error("canvasElement is not defined");
+function srcCreateCtx() {
+  if (!canvasElement) throw new Error("canvasElement is not defined");
 
-const ctx = canvasElement.getContext("2d", {
-  alpha: false,
-  willReadFrequently: true,
-});
+  const ctx = canvasElement.getContext("2d", {
+    alpha: false,
+    willReadFrequently: true,
+  });
 
-export { ctx };
+  return ctx;
+};
+
+export { srcCreateCtx };

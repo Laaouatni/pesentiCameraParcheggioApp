@@ -1,5 +1,7 @@
-function srcFrameLogic(ws) {
-  //   setInterval(() => {
+import { srcShowImageInUi } from "./srcShowFrameInUi.js";
+
+function srcFrameLogic(ws, ctx) {
+  srcShowImageInUi(ctx);
   //     ctx.drawImage(
   //       videoElement,
   //       0,
@@ -82,7 +84,6 @@ function srcFrameLogic(ws) {
   //       ws.send(thisFrameArrayToSendToEsp32String);
   //       previousFrameArrayToSendToEsp32String = thisFrameArrayToSendToEsp32String;
   //     })();
-  //   }, 1000 / FPS);
 }
 
 export default srcFrameLogic;
