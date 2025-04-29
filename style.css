@@ -17,16 +17,27 @@ body {
 body {
   place-items: center;
   place-content: center;
-  display: grid;
+  display: flex;
+  flex-direction: column;
   gap: 1rem;
+  padding: 1rem;
 }
 
-@media (max-height: 500px) {
+#controlsElement {
+  width: 100%;
+}
+
+@media (max-height: 505px) and (min-width: 700px) {
   body {
-    display: flex;
-    padding: 1rem;
+    flex-direction: row;
   }
   #controlsElement {
     flex: 1;
+  }
+}
+
+@media (max-height: 505px) and (max-width: 700px) {
+  #controlsElement {
+    display: none;
   }
 }
