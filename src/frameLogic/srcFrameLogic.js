@@ -1,4 +1,5 @@
 import { srcShowImageInUi } from "./srcShowFrameInUi.js";
+import { srcColorParkingItems } from "./srcColorParkingItems.js";
 
 /**
  * 
@@ -7,13 +8,8 @@ import { srcShowImageInUi } from "./srcShowFrameInUi.js";
  */
 function srcFrameLogic(ws, ctx) {
   srcShowImageInUi(ctx);
-  //     ctx.drawImage(
-  //       videoElement,
-  //       0,
-  //       0,
-  //       canvasElement.width,
-  //       canvasElement.height,
-  //     );
+  srcColorParkingItems(ctx);
+  
   //     let thisFrameArrayToSendToEsp32 = [];
   //     parkingItems.forEach((thisParkingItem, thisParkingItemIndex) => {
   //       const isOccupiedBoolean = analyzeParkingSlot(thisParkingItem);
