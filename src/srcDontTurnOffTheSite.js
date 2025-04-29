@@ -3,6 +3,7 @@ function srcDontTurnOffTheSite() {
 
   navigator.wakeLock.request("screen").catch((err) => {
     console.error(`Wake Lock request failed: ${err.name}, ${err.message}`);
+    window.location.reload();
   });
 }
 
