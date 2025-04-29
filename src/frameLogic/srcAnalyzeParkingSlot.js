@@ -1,9 +1,11 @@
 /**
  * 
  * @param {Element} thisParkingItem 
+ * @return {boolean}
  */
 function srcAnalyzeParkingSlot(thisParkingItem) {
-  // function analyzeParkingSlot(thisParkingItem) {
+  if (!thisParkingItem) throw new Error("thisParkingItem is not defined");
+  return true;
     //         let isOccupied = false;
     //         let thisColoredRatio = 0;
     //         let coloredPixelsCount = 0;

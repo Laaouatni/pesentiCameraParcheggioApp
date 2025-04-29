@@ -11,17 +11,16 @@ function srcColorParkingItems(ctx) {
 
   parkingItems.forEach((thisParkingItem) => {
     const isOccupied = srcAnalyzeParkingSlot(thisParkingItem);
+    thisParkingItem.setAttribute(
+      "style",
+      `--slotColor: ${isOccupied ? "red" : "green"}`,
+    );
   });
-  //     parkingItems.forEach((thisParkingItem, thisParkingItemIndex) => {
-  //       const isOccupiedBoolean = analyzeParkingSlot(thisParkingItem);
-  //       thisParkingItem.setAttribute(
-  //         "style",
-  //         `--slotColor: ${isOccupiedBoolean ? "red" : "green"}`,
-  //       );
+
   //       thisFrameArrayToSendToEsp32[thisParkingItemIndex] = isOccupiedBoolean
   //         ? "1"
   //         : "0";
-  //  
+  //
   //     });
 }
 

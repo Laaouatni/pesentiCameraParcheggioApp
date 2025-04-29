@@ -20,5 +20,4 @@ videoElement.addEventListener("playing", () => {
 });
 
 // const parkingViewElementStyles = parkingViewElement.getBoundingClientRect();
-// const parkingItems = document.querySelectorAll(".parkingItem");
 
