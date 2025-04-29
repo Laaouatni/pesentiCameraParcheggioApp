@@ -20,4 +20,3 @@ videoElement.addEventListener("playing", () => {
   
   srcVideoLogic(ws, ctx);
 });
-
