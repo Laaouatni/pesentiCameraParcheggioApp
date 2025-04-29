@@ -15,7 +15,18 @@ body {
 }
 
 body {
+  place-items: center;
   place-content: center;
   display: grid;
   gap: 1rem;
+}
+
+@media (max-height: 500px) {
+  body {
+    display: flex;
+    padding: 1rem;
+  }
+  #controlsElement {
+    flex: 1;
+  }
 }
