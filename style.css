@@ -1,3 +1,6 @@
+@import "./styles/controlsElement.css";
+@import "./styles/parkingViewElement.css";
+
 *,
 ::after,
 ::before {
@@ -12,92 +15,7 @@ body {
 }
 
 body {
-  place-items: center;
-  display: grid;
-}
-
-#parkingViewElement {
-  --parkingZoom: 1.3;
-  --parkingViewWidth: calc(297px * var(--parkingZoom));
-  --parkingViewHeight: calc(210px * var(--parkingZoom));
-  --slotWidth: calc(30px * var(--parkingZoom));
-  --slotHeight: calc(60px * var(--parkingZoom));
-  --slotPadding: calc(16px * var(--parkingZoom));
-  --slotSpessoreBordo: calc((min(var(--slotWidth), var(--slotHeight))/10)*var(--parkingZoom));
-  --slotRadius: calc(var(--slotSpessoreBordo)*2);
-  --slotColor: red;
-
-  display: flex;
-  justify-content: space-between;
-
-  width: var(--parkingViewWidth);
-  height: var(--parkingViewHeight);
-
-  position: relative;
-  z-index: 1;
-}
-
-#canvasElement {
-  position: absolute;
-  z-index: 0;
-}
-
-.parkingGroup {
-  z-index: 2;
-  gap: var(--slotPadding);
-}
-
-#parkingGroupSinistra,
-#parkingGroupDestra {
-  display: flex;
-}
-
-#parkingGroupSinistra {
-  flex-direction: column-reverse;
-}
-
-#parkingGroupDestra {
-  flex-direction: column;
-  align-self: end;
-}
-
-#parkingGroupAlto {
-  display: flex;
-}
-
-.parkingItem {
-  z-index: 2;
-  border-width: var(--slotSpessoreBordo);
-  border-style: solid;
-  border-color: var(--slotColor);
-  padding: var(--slotPadding);
-  font-family: Helvetica;
-  display: grid;
   place-content: center;
-  font-size: calc(var(--slotWidth)/5);
-  font-weight: bolder;
-  color: var(--slotColor)
-}
-
-#parkingGroupSinistra .parkingItem,
-#parkingGroupDestra .parkingItem {
-  width: var(--slotHeight);
-  height: var(--slotWidth);
-}
-
-#parkingGroupSinistra .parkingItem {
-  border-top-right-radius: var(--slotRadius);
-  border-bottom-right-radius: var(--slotRadius);
-}
-
-#parkingGroupAlto .parkingItem {
-  border-bottom-left-radius: var(--slotRadius);
-  border-bottom-right-radius: var(--slotRadius);
-  width: var(--slotWidth);
-  height: var(--slotHeight);
-}
-
-#parkingGroupDestra .parkingItem {
-  border-top-left-radius: var(--slotRadius);
-  border-bottom-left-radius: var(--slotRadius);
+  display: grid;
+  gap: 1rem;
 }
