@@ -1,6 +1,7 @@
 import { parkingItems } from "../srcDomCostants.js";
 import { srcAnalyzeParkingSlot } from "./srcAnalyzeParkingSlot.js";
 import { parkingViewElement } from "../srcDomCostants.js";
+import { updateThisFrameArrayValueToSendToEsp32AtIndex } from "./srcFrameLogic.js";
 
 /**
  *
@@ -13,19 +14,23 @@ function srcColorParkingItems(ctx) {
 
   const parkingViewElementStyles = parkingViewElement.getBoundingClientRect();
 
-  parkingItems.forEach((thisParkingItem) => {
-    const isOccupied = srcAnalyzeParkingSlot(ctx, thisParkingItem, parkingViewElementStyles);
+  parkingItems.forEach((thisParkingItem, thisParkingItemIndex) => {
+    const isOccupied = srcAnalyzeParkingSlot(
+      ctx,
+      thisParkingItem,
+      parkingViewElementStyles,
+    );
+
     thisParkingItem.setAttribute(
       "style",
       `--slotColor: ${isOccupied ? "red" : "green"}`,
     );
-  });
 
-  //       thisFrameArrayToSendToEsp32[thisParkingItemIndex] = isOccupiedBoolean
-  //         ? "1"
-  //         : "0";
-  //
-  //     });
+    updateThisFrameArrayValueToSendToEsp32AtIndex(
+      thisParkingItemIndex,
+      isOccupied ? "1" : "0",
+    );
+  });
 }
 
 export { srcColorParkingItems };

@@ -10,8 +10,6 @@ import { srcResizeVideoCanvas } from "./srcResizeVideoCanvas.js";
 function srcVideoLogic(ws, ctx) {
   srcResizeVideoCanvas();
 
-  //   let previousFrameArrayToSendToEsp32String = "";
-
   setInterval(() => {
     srcFrameLogic(ws, ctx);
   }, 1000 / FPS);
