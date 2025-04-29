@@ -12,7 +12,6 @@ function srcAnalyzeParkingSlot(ctx, thisParkingItem, parkingViewElementStyles) {
   if (!thisParkingItem) throw new Error("thisParkingItem is not defined");
 
   let isOccupied = false;
-  let thisColoredRatio = 0;
   let coloredPixelsCount = 0;
 
   const thisParkingItemPositionData = srcGetThisParkingItemPositionData(
@@ -27,31 +26,30 @@ function srcAnalyzeParkingSlot(ctx, thisParkingItem, parkingViewElementStyles) {
     thisParkingItemPositionData.h,
   ).data;
 
+  const totalPixels = thisParkingItemData.length / 4;
+  const minColoredPixelsNeeded = totalPixels * MIN_COLORED_RATIO;
+
   for (let i = 0; i < thisParkingItemData.length; i += 4) {
-    const thisRgbObject = {
-      r: thisParkingItemData[i],
-      g: thisParkingItemData[i + 1],
-      b: thisParkingItemData[i + 2],
-    };
-    const thisRgbArray = [thisRgbObject.r, thisRgbObject.g, thisRgbObject.b];
+    const thisR = thisParkingItemData[i];
+    const thisG = thisParkingItemData[i + 1];
+    const thisB = thisParkingItemData[i + 2];
+
+    const thisRgbArray = [thisR, thisG, thisB];
+    
     const maxDiff = Math.max(
       Math.abs(thisRgbArray[0] - thisRgbArray[1]),
       Math.abs(thisRgbArray[1] - thisRgbArray[2]),
       Math.abs(thisRgbArray[2] - thisRgbArray[0]),
     );
+
     const isGrigio = maxDiff < DELTA_TOLLERANZA_COLORI;
-    const isBianco = thisRgbArray.every(
-      (thisColorValue) =>
-        thisColorValue > REFERENCE_COLOR_WHITE,
-    );
-    const isNero = thisRgbArray.every(
-      (thisColorValue) => thisColorValue < REFERENCE_COLOR_BLACK,
-    );
+    const isBianco = thisRgbArray.every((x) => x > REFERENCE_COLOR_WHITE);
+    const isNero = thisRgbArray.every((x) => x < REFERENCE_COLOR_BLACK);
+
     const canIgnoreColor = isGrigio || isBianco || isNero;
     if (canIgnoreColor) continue;
-    const totalPixels = thisParkingItemData.length / 4;
-    thisColoredRatio = coloredPixelsCount / totalPixels;
-    isOccupied = thisColoredRatio > MIN_COLORED_RATIO;
+
+    isOccupied = coloredPixelsCount > minColoredPixelsNeeded;
     if (isOccupied) break;
     coloredPixelsCount++;
   }
