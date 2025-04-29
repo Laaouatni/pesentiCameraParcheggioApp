@@ -59,6 +59,7 @@ function srcUpdateColorInputsDinamically() {
       const thisInputValue = input.value;
       const [R, G, B] = hexToRgb(thisInputValue);
       text.innerText = `${R}, ${G}, ${B}`;
+      colorInputObject.values.update([R, G, B]);
     });
   });
 }
@@ -71,6 +72,7 @@ function srcUpdateTolleranzaInputsDinamically() {
   input.addEventListener("input", () => {
     const thisInputValue = input.value;
     text.innerText = `${thisInputValue}`;
+    inputConfigTolleranza.values.update(Number(thisInputValue));
   });
 }
 

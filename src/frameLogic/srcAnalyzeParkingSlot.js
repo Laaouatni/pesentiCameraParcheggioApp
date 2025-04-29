@@ -16,10 +16,12 @@ import { srcGetThisParkingItemPositionData } from "./srcGetThisParkingItemPositi
 function srcAnalyzeParkingSlot(ctx, thisParkingItem, parkingViewElementStyles) {
   if (!thisParkingItem) throw new Error("thisParkingItem is not defined");
 
-  if (REFERENCE_COLOR_BLACK.every((_,i) => REFERENCE_COLOR_BLACK[i] == [0, 0, 0][i])) {
+  if (!(REFERENCE_COLOR_BLACK.every((_,i) => REFERENCE_COLOR_BLACK[i] == [0, 0, 0][i]))) {
     console.log("REFERENCE_COLOR_BLACK", REFERENCE_COLOR_BLACK);
   }
-
+  // if (REFERENCE_COLOR_WHITE != [255, 255, 255]) {
+  //   console.log("REFERENCE_COLOR_WHITE", REFERENCE_COLOR_WHITE);
+  // }
 
 
   let isOccupied = false;
