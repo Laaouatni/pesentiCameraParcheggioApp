@@ -14,6 +14,8 @@ srcDontTurnOffTheSite();
 srcActivateVideoCamera();
 
 videoElement.addEventListener("playing", () => {
+  if (!ctx) throw new Error("ctx is not defined");
+  
   srcVideoLogic(ws, ctx);
 });
 
