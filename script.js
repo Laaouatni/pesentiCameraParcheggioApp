@@ -1,11 +1,9 @@
 import { srcActivateVideoCamera } from "./src/srcActivateCamera.js";
 import { srcDontTurnOffTheSite } from "./src/srcDontTurnOffTheSite.js";
 import { srcFullScreenBtn } from "./src/srcFullScreenBtn.js";
-import { ctx } from "./src/srcCreateCtx.js";
 import { videoElement } from "./src/srcDomCostants.js";
 import srcVideoLogic from "./src/srcVideoLogic.js";
 
-const FPS = 30;
 const ws = new WebSocket("wss://pesentiws-43f6274c0f11.herokuapp.com/");
 
 ws.addEventListener("close", () => {
