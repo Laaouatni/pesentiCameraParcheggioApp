@@ -1,8 +1,16 @@
+import { parkingItems } from "../srcDomCostants";
+
 /**
  *
  * @param {CanvasRenderingContext2D} ctx
  */
 function srcColorParkingItems(ctx) {
+  if (!ctx) throw new Error("ctx is not defined");
+  if (!parkingItems) throw new Error("parkingItems is not defined");
+
+  parkingItems.forEach((thisParkingItem) => {
+
+  });
   //     parkingItems.forEach((thisParkingItem, thisParkingItemIndex) => {
   //       const isOccupiedBoolean = analyzeParkingSlot(thisParkingItem);
   //       thisParkingItem.setAttribute(
