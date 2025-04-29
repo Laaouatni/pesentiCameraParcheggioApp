@@ -1,4 +1,9 @@
-import { DELTA_TOLLERANZA_COLORI, MIN_COLORED_RATIO, REFERENCE_COLOR_BLACK, REFERENCE_COLOR_WHITE } from "../srcConfigCostants.js";
+import {
+  DELTA_TOLLERANZA_COLORI,
+  MIN_COLORED_RATIO,
+  REFERENCE_COLOR_BLACK,
+  REFERENCE_COLOR_WHITE,
+} from "../srcConfigCostants.js";
 import { srcGetThisParkingItemPositionData } from "./srcGetThisParkingItemPositionData.js";
 
 /**
@@ -35,7 +40,7 @@ function srcAnalyzeParkingSlot(ctx, thisParkingItem, parkingViewElementStyles) {
     const thisB = thisParkingItemData[i + 2];
 
     const thisRgbArray = [thisR, thisG, thisB];
-    
+
     const maxDiff = Math.max(
       Math.abs(thisRgbArray[0] - thisRgbArray[1]),
       Math.abs(thisRgbArray[1] - thisRgbArray[2]),
@@ -43,15 +48,25 @@ function srcAnalyzeParkingSlot(ctx, thisParkingItem, parkingViewElementStyles) {
     );
 
     const isGrigio = maxDiff < DELTA_TOLLERANZA_COLORI;
-    const isBianco = thisRgbArray.every((x) => x > REFERENCE_COLOR_WHITE);
-    const isNero = thisRgbArray.every((x) => x < REFERENCE_COLOR_BLACK);
+    const isBianco = thisRgbArray.every((_, thisColorIndex) => {
+      return (
+        thisRgbArray[thisColorIndex] >=
+        REFERENCE_COLOR_WHITE[thisColorIndex] - DELTA_TOLLERANZA_COLORI
+      );
+    });
+    const isNero = thisRgbArray.every((_, thisColorIndex) => {
+      return (
+        thisRgbArray[thisColorIndex] <=
+        REFERENCE_COLOR_BLACK[thisColorIndex] + DELTA_TOLLERANZA_COLORI
+      );
+    });
 
     const canIgnoreColor = isGrigio || isBianco || isNero;
     if (canIgnoreColor) continue;
 
     isOccupied = coloredPixelsCount > minColoredPixelsNeeded;
     if (isOccupied) break;
-    
+
     coloredPixelsCount++;
   }
   return isOccupied;
