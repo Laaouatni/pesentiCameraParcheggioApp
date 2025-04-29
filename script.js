@@ -4,8 +4,11 @@ ws.addEventListener("close", () => {
   window.location.reload();
 });
 
-document.documentElement.requestFullscreen();
-window.screen.orientation.lock("landscape");
+document.onclick = () => {
+  document.documentElement.requestFullscreen();
+  window.screen.orientation.lock("landscape");
+}
+
 
 const canvasElement = document.getElementById("canvasElement");
 const videoElement = document.getElementById("videoElement");
