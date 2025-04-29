@@ -19,5 +19,3 @@ videoElement.addEventListener("playing", () => {
   srcVideoLogic(ws, ctx);
 });
 
-// const parkingViewElementStyles = parkingViewElement.getBoundingClientRect();
-
