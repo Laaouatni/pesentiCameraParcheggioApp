@@ -1,3 +1,5 @@
+import { srcGetThisParkingItemPositionData } from "./srcGetThisParkingItemPositionData";
+
 /**
  *
  * @param {CanvasRenderingContext2D} ctx
@@ -12,14 +14,10 @@ function srcAnalyzeParkingSlot(ctx, thisParkingItem, parkingViewElementStyles) {
   let thisColoredRatio = 0;
   let coloredPixelsCount = 0;
 
-  const thisParkingItemStyles = thisParkingItem.getBoundingClientRect();
-
-  const thisParkingItemPositionData = {
-    x: thisParkingItemStyles.x - parkingViewElementStyles.x,
-    y: thisParkingItemStyles.y - parkingViewElementStyles.y,
-    w: thisParkingItemStyles.width,
-    h: thisParkingItemStyles.height,
-  };
+  const thisParkingItemPositionData = srcGetThisParkingItemPositionData(
+    thisParkingItem,
+    parkingViewElementStyles,
+  );
 
   const thisParkingItemData = ctx.getImageData(
     thisParkingItemPositionData.x,
@@ -29,7 +27,6 @@ function srcAnalyzeParkingSlot(ctx, thisParkingItem, parkingViewElementStyles) {
   ).data;
 
   return false;
-  //         let totalPixels = thisParkingItemData.length / 4;
   //         for (let i = 0; i < thisParkingItemData.length; i += 4) {
   //           const thisRgbObject = {
   //             r: thisParkingItemData[i],
@@ -57,6 +54,7 @@ function srcAnalyzeParkingSlot(ctx, thisParkingItem, parkingViewElementStyles) {
   //           );
   //           const canIgnoreColor = isGrigio || isBianco || isNero;
   //           if (canIgnoreColor) continue;
+  //           const totalPixels = thisParkingItemData.length / 4;
   //           thisColoredRatio = coloredPixelsCount / totalPixels;
   //           isOccupied = thisColoredRatio > CONFIGURAZIONE.MIN_COLORED_RATIO;
   //           if (isOccupied) break;
