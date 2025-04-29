@@ -29,7 +29,7 @@ export const domColorInputs = {
 };
 
 /**
- * @type {Record<string, {input: HTMLInputElement, text: HTMLSpanElement}>}
+ * @type {{input: HTMLInputElement, text: HTMLSpanElement}}
  */
 export const inputConfigTolleranza = {
   input: document.getElementById("inputConfigTolleranza"),

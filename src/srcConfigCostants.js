@@ -3,3 +3,10 @@ export const DELTA_TOLLERANZA_COLORI = 30;
 export const MIN_COLORED_RATIO = 8 / 100;
 export let REFERENCE_COLOR_BLACK = DELTA_TOLLERANZA_COLORI;
 export let REFERENCE_COLOR_WHITE = 255 - DELTA_TOLLERANZA_COLORI;
+
+export function updateReferenceColorBlack(newValue) {
+  REFERENCE_COLOR_BLACK = newValue;
+}
+export function updateReferenceColorWhite(newValue) {
+  REFERENCE_COLOR_WHITE = newValue;
+}
