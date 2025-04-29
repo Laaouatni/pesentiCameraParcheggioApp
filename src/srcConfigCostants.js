@@ -1,4 +1,4 @@
-export const FPS = 30;
+export const FPS = 20;
 export const DELTA_TOLLERANZA_COLORI = 30;
 export const MIN_COLORED_RATIO = 8 / 100;
 export let REFERENCE_COLOR_BLACK = DELTA_TOLLERANZA_COLORI;
