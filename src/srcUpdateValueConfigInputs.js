@@ -41,8 +41,6 @@ export const inputConfigTolleranza = {
 function srcUpdateValueConfigInputs() {
   srcUpdateColorInputsDinamically();
   srcUpdateTolleranzaInputsDinamically();
-
-
 }
 
 function srcUpdateColorInputsDinamically() {
