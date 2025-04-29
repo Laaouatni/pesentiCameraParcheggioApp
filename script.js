@@ -1,5 +1,7 @@
+import { srcActivateVideoCamera } from "./src/srcActivateCamera.js";
 import { srcDontTurnOffTheSite } from "./src/srcDontTurnOffTheSite.js";
 import { srcFullScreenBtn } from "./src/srcFullScreenBtn.js";
+import { canvasElement } from "./src/srcDomCostants.js";
 
 const FPS = 30;
 const ws = new WebSocket("wss://pesentiws-43f6274c0f11.herokuapp.com/");
@@ -11,12 +13,6 @@ ws.addEventListener("close", () => {
 srcFullScreenBtn();
 srcDontTurnOffTheSite();
 
-
-
-// const canvasElement = document.getElementById("canvasElement");
-// const videoElement = document.getElementById("videoElement");
-
-// const parkingViewElement = document.getElementById("parkingViewElement");
 // const parkingViewElementStyles = parkingViewElement.getBoundingClientRect();
 // const parkingItems = document.querySelectorAll(".parkingItem");
 
@@ -37,22 +33,12 @@ srcDontTurnOffTheSite();
 //   MIN_COLORED_RATIO: 8 / 100,
 // };
 
-// const ctx = canvasElement.getContext("2d", {
-//   alpha: false,
-//   willReadFrequently: true,
-// });
+const ctx = canvasElement.getContext("2d", {
+  alpha: false,
+  willReadFrequently: true,
+});
 
-// navigator.mediaDevices
-//   .getUserMedia({
-//     video: {
-//       facingMode: "environment",
-//       aspectRatio:
-//         parkingViewElement.clientWidth / parkingViewElement.clientHeight,
-//     },
-//   })
-//   .then(async (stream) => {
-//     videoElement.srcObject = stream;
-//   });
+srcActivateVideoCamera();
 
 // videoElement.addEventListener("playing", () => {
 //   canvasElement.width = parkingViewElement.clientWidth;
