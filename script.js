@@ -1,7 +1,7 @@
 import { srcActivateVideoCamera } from "./src/srcActivateCamera.js";
 import { srcDontTurnOffTheSite } from "./src/srcDontTurnOffTheSite.js";
 import { srcFullScreenBtn } from "./src/srcFullScreenBtn.js";
-import { canvasElement } from "./src/srcDomCostants.js";
+import { ctx } from "./src/srcCreateCtx.js";
 
 const FPS = 30;
 const ws = new WebSocket("wss://pesentiws-43f6274c0f11.herokuapp.com/");
@@ -33,10 +33,7 @@ srcDontTurnOffTheSite();
 //   MIN_COLORED_RATIO: 8 / 100,
 // };
 
-const ctx = canvasElement.getContext("2d", {
-  alpha: false,
-  willReadFrequently: true,
-});
+
 
 srcActivateVideoCamera();
 
