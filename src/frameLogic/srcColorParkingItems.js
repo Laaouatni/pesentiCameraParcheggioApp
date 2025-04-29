@@ -1,5 +1,5 @@
-import { parkingItems } from "../srcDomCostants";
-import { srcAnalyzeParkingSlot } from "./srcAnalyzeParkingSlot";
+import { parkingItems } from "../srcDomCostants.js";
+import { srcAnalyzeParkingSlot } from "./srcAnalyzeParkingSlot.js";
 
 /**
  *
