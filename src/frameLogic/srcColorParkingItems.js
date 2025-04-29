@@ -14,7 +14,7 @@ function srcColorParkingItems(ctx) {
   const parkingViewElementStyles = parkingViewElement.getBoundingClientRect();
 
   parkingItems.forEach((thisParkingItem) => {
-    const isOccupied = srcAnalyzeParkingSlot(thisParkingItem, parkingViewElementStyles);
+    const isOccupied = srcAnalyzeParkingSlot(ctx, thisParkingItem, parkingViewElementStyles);
     thisParkingItem.setAttribute(
       "style",
       `--slotColor: ${isOccupied ? "red" : "green"}`,

@@ -1,16 +1,19 @@
 /**
  *
+ * @param {CanvasRenderingContext2D} ctx
  * @param {Element} thisParkingItem
  * @param {DOMRect} parkingViewElementStyles
  * @return {boolean}
  */
-function srcAnalyzeParkingSlot(thisParkingItem, parkingViewElementStyles) {
+function srcAnalyzeParkingSlot(ctx, thisParkingItem, parkingViewElementStyles) {
   if (!thisParkingItem) throw new Error("thisParkingItem is not defined");
 
   let isOccupied = false;
   let thisColoredRatio = 0;
   let coloredPixelsCount = 0;
+
   const thisParkingItemStyles = thisParkingItem.getBoundingClientRect();
+
   const thisParkingItemPositionData = {
     x: thisParkingItemStyles.x - parkingViewElementStyles.x,
     y: thisParkingItemStyles.y - parkingViewElementStyles.y,
@@ -18,13 +21,14 @@ function srcAnalyzeParkingSlot(thisParkingItem, parkingViewElementStyles) {
     h: thisParkingItemStyles.height,
   };
 
+  const thisParkingItemData = ctx.getImageData(
+    thisParkingItemPositionData.x,
+    thisParkingItemPositionData.y,
+    thisParkingItemPositionData.w,
+    thisParkingItemPositionData.h,
+  ).data;
+
   return false;
-  //         const thisParkingItemData = ctx.getImageData(
-  //           thisParkingItemPositionData.x,
-  //           thisParkingItemPositionData.y,
-  //           thisParkingItemPositionData.w,
-  //           thisParkingItemPositionData.h,
-  //         ).data;
   //         let totalPixels = thisParkingItemData.length / 4;
   //         for (let i = 0; i < thisParkingItemData.length; i += 4) {
   //           const thisRgbObject = {
