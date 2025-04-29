@@ -1,5 +1,10 @@
 import { srcShowImageInUi } from "./srcShowFrameInUi.js";
 
+/**
+ * 
+ * @param {WebSocket} ws 
+ * @param {CanvasRenderingContext2D} ctx 
+ */
 function srcFrameLogic(ws, ctx) {
   srcShowImageInUi(ctx);
   //     ctx.drawImage(
