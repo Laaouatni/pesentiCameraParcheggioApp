@@ -1,5 +1,7 @@
+import { btnRoutaSchermo } from "./srcDomCostants.js";
+
 function srcFullScreenBtn() {
-  const btnRoutaSchermo = document.getElementById("btnRoutaSchermo");
+  if (!btnRoutaSchermo) throw new Error("btnRoutaSchermo is not defined");
 
   btnRoutaSchermo.addEventListener("click", () => {
     document.documentElement.requestFullscreen();

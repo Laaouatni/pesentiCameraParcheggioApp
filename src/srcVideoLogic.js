@@ -1,6 +1,6 @@
-import { FPS } from "./srcConfigCostants";
-import { canvasElement, parkingViewElement } from "./srcDomCostants";
-import srcFrameLogic from "./srcFrameLogic";
+import { FPS } from "./srcConfigCostants.js";
+import { canvasElement, parkingViewElement } from "./srcDomCostants.js";
+import srcFrameLogic from "./srcFrameLogic.js";
 
 function srcVideoLogic() {
   if (!parkingViewElement) throw new Error("parkingViewElement is not defined");
