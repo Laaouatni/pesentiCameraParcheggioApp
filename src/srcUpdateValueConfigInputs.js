@@ -46,7 +46,7 @@ function srcUpdateValueConfigInputs() {
 function srcUpdateColorInputsDinamically() {
   const allColorInputObjects = Object.values(domColorInputs);
 
-  allColorInputObjects.forEach((colorInputObject, colorInputIndex) => {
+  allColorInputObjects.forEach((colorInputObject) => {
     const { input, text } = colorInputObject;
     if (!input) throw new Error("input is not defined");
     if (!text) throw new Error("text is not defined");
@@ -68,6 +68,10 @@ function srcUpdateTolleranzaInputsDinamically() {
   const { input, text } = inputConfigTolleranza;
   if (!input) throw new Error("input is not defined");
   if (!text) throw new Error("text is not defined");
+
+  input.value = inputConfigTolleranza.values.default;
+  text.innerText = `${inputConfigTolleranza.values.default}`;
+
 
   input.addEventListener("input", () => {
     const thisInputValue = input.value;
