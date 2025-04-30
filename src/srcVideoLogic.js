@@ -21,4 +21,4 @@ function srcVideoLogic(ws, ctx) {
   }, 1000 / FPS);
 }
 
-export default srcVideoLogic;
+export { srcVideoLogic };

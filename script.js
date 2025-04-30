@@ -1,4 +1,4 @@
-import srcVideoLogic from "./src/srcVideoLogic.js";
+import { srcVideoLogic } from "./src/srcVideoLogic.js";
 import { srcCreateCtx } from "./src/srcCreateCtx.js";
 import { videoElement } from "./src/srcDomCostants.js";
 import { srcFullScreenBtn } from "./src/srcFullScreenBtn.js";
@@ -17,6 +17,6 @@ srcUpdateValueConfigInputs();
 
 videoElement.addEventListener("playing", () => {
   if (!ctx) throw new Error("ctx is not defined");
-  
+
   srcVideoLogic(ws, ctx);
 });
