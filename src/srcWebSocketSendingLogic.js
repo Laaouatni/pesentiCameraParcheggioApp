@@ -23,10 +23,8 @@ function srcWebSocketSendingLogic(ws) {
     return `${wsKey}:${wsValue}`;
   });
 
-  console.log(wsStringWithKey)
-
-  ws.send(thisFrameArrayToSendToEsp32String);
-  updatePreviousFrameArrayStringToSendToEsp32(thisFrameArrayToSendToEsp32String);
+  ws.send(wsStringWithKey);
+  updatePreviousFrameArrayStringToSendToEsp32(wsStringWithKey);
 }
 
 export { srcWebSocketSendingLogic };
