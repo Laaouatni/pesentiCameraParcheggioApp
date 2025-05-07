@@ -15,10 +15,18 @@ function srcWebSocketSendingLogic(ws) {
 
   if (!canSend) return;
 
+
+  const wsStringWithKey = Object.values({
+    wsKey: "cameraInput",
+    wsValue: thisFrameArrayToSendToEsp32String
+  }).reduce((wsKey, wsValue) => {
+    return `${wsKey}:${wsValue}`;
+  });
+
+  console.log(wsStringWithKey)
+
   ws.send(thisFrameArrayToSendToEsp32String);
-  updatePreviousFrameArrayStringToSendToEsp32(
-    thisFrameArrayToSendToEsp32String,
-  );
+  updatePreviousFrameArrayStringToSendToEsp32(thisFrameArrayToSendToEsp32String);
 }
 
 export { srcWebSocketSendingLogic };
