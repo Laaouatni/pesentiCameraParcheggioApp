@@ -1,23 +1,17 @@
 
 #parkingViewElement {
   --parkingZoom: 1.3;
-  /* --parkingViewWidth: calc(297px * var(--parkingZoom));
-  --parkingViewHeight: calc(210px * var(--parkingZoom));
-  --slotWidth: calc(30px * var(--parkingZoom));
-  --slotHeight: calc(60px * var(--parkingZoom));
-  --slotPadding: calc(16px * var(--parkingZoom));
-  --slotSpessoreBordo: calc((min(var(--slotWidth), var(--slotHeight))/10)*var(--parkingZoom));
-  --slotRadius: calc(var(--slotSpessoreBordo)*2); */
   --slotColor: red;
-
   display: flex;
-  justify-content: space-between;
-
-  width: var(--sizeConfig-parkingViewWidth);
-  height: var(--sizeConfig-parkingViewHeight);
-
   position: relative;
   z-index: 1;
+}
+
+#parkingGroupContainer {
+  display: flex;
+  justify-content: space-between;
+  width: var(--sizeConfig-parkingViewWidth);
+  height: var(--sizeConfig-parkingViewHeight);
 }
 
 #canvasElement {
