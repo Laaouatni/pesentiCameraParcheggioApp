@@ -21,19 +21,6 @@ function srcWebSocketSendingLogic(ws) {
     ws.send(thisString);
     updatePreviousFrameArrayStringToSendToEsp32(value, thisString);
   });
-
-  // const thisFrameArrayToSendToEsp32String = `slotsCameraInput:${thisFrameArrayToSendToEsp32[
-  //   "parkingItem"
-  // ].join(",")}`;
-  // const canSend =
-  //   thisFrameArrayToSendToEsp32String != previousFrameArrayStringToSendToEsp32;
-
-  // if (!canSend) return;
-
-  // ws.send(thisFrameArrayToSendToEsp32String);
-  // updatePreviousFrameArrayStringToSendToEsp32(
-  //   thisFrameArrayToSendToEsp32String,
-  // );
 }
 
 export { srcWebSocketSendingLogic };
