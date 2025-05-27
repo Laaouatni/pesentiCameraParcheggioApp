@@ -38,8 +38,8 @@ body {
   }
 }
 
-@media (max-height: 780px) {
+/* @media (max-height: 780px) {
   #controlsElement {
     display: none;
   }
-}
+} */
