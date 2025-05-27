@@ -20,7 +20,10 @@ export function updateThisFrameArrayValueToSendToEsp32AtIndex(itemName,index,val
  * @param {CanvasRenderingContext2D} ctx
  */
 function srcFrameLogic(ws, ctx) {
-  thisFrameArrayToSendToEsp32 = [];
+  thisFrameArrayToSendToEsp32 = {
+    parkingItem: [],
+    cancelloItem: [],
+  };
   srcShowImageInUi(ctx);
   srcColorParkingItems(ctx);
   srcWebSocketSendingLogic(ws);
