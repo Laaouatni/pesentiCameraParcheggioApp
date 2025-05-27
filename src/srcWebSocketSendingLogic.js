@@ -10,7 +10,7 @@ function srcWebSocketSendingLogic(ws) {
 
   const keys = {
     slotsCameraInput: "parkingItem",
-    slotsCameraInputCancello: "cancelloItem",
+    cancelloCameraInput: "cancelloItem",
   };
 
   Object.entries(keys).forEach(([key, value]) => {
