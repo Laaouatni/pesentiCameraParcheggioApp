@@ -3,12 +3,15 @@ import { srcColorParkingItems } from "./srcColorParkingItems.js";
 import { srcWebSocketSendingLogic } from "../srcWebSocketSendingLogic.js";
 
 /**
- * @type {string[]}
+ * @type {Object.<string, Array<string>>}
  */
-export let thisFrameArrayToSendToEsp32 = [];
+export let thisFrameArrayToSendToEsp32 = {
+  parkingItem: [],
+  cancelloItem: [],
+};
 
-export function updateThisFrameArrayValueToSendToEsp32AtIndex(index,value) {
-  thisFrameArrayToSendToEsp32[index] = value;
+export function updateThisFrameArrayValueToSendToEsp32AtIndex(itemName,index,value) {
+  thisFrameArrayToSendToEsp32[itemName][index] = value;
 }
 
 /**

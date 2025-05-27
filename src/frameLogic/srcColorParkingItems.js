@@ -3,6 +3,8 @@ import { srcAnalyzeParkingSlot } from "./srcAnalyzeParkingSlot.js";
 import { parkingViewElement } from "../srcDomCostants.js";
 import { updateThisFrameArrayValueToSendToEsp32AtIndex } from "./srcFrameLogic.js";
 
+const cancelliItems = document.querySelectorAll(".cancello-item");
+
 /**
  *
  * @param {CanvasRenderingContext2D} ctx
@@ -27,7 +29,27 @@ function srcColorParkingItems(ctx) {
     );
 
     updateThisFrameArrayValueToSendToEsp32AtIndex(
+      "parkingItem",
       thisParkingItemIndex,
+      isOccupied ? "1" : "0",
+    );
+  });
+
+  cancelliItems.forEach((thisCancelloItem, thisCancelloItemIndex) => {
+    const isOccupied = srcAnalyzeParkingSlot(
+      ctx,
+      thisCancelloItem,
+      parkingViewElementStyles,
+    );
+
+    thisCancelloItem.setAttribute(
+      "style",
+      `--slotColor: ${isOccupied ? "red" : "green"}`,
+    );
+
+    updateThisFrameArrayValueToSendToEsp32AtIndex(
+      "cancelloItem", 
+      thisCancelloItemIndex,
       isOccupied ? "1" : "0",
     );
   });
