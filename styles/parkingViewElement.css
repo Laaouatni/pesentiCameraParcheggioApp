@@ -1,7 +1,7 @@
 
 #parkingViewElement {
   --slotColor: red;
-  display: flex;
+  display: grid;
   position: relative;
   z-index: 1;
 }

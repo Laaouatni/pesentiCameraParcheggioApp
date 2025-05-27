@@ -1,6 +1,7 @@
 @import "./styles/controlsElement.css";
 @import "./styles/parkingViewElement.css";
 @import "./styles/sizeInputsContainer.css";
+@import "./styles/cancelliContainer.css";
 
 *,
 ::after,
