@@ -2,4 +2,5 @@
   --slotColor: red;
   margin-top: var(--sizeConfig-distanceSlotCancello);
   outline: 1px solid red;
+  z-index: 1;
 }
