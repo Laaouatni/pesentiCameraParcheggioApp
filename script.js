@@ -6,6 +6,7 @@ import { srcActivateVideoCamera } from "./src/srcActivateCamera.js";
 import { srcDontTurnOffTheSite } from "./src/srcDontTurnOffTheSite.js";
 import { srcCreateWebSocketClient } from "./src/srcCreateWebSocketClient.js";
 import { srcUpdateValueConfigInputs } from "./src/srcUpdateValueConfigInputs.js";
+import { srcResizeVideoCanvas } from "./src/srcResizeVideoCanvas.js";
 
 const ws = srcCreateWebSocketClient();
 const ctx = srcCreateCtx();
@@ -55,6 +56,10 @@ Object.entries(sizeConfig).forEach(([key, value]) => {
     thisLabel.textContent = `${key}: ${sizeConfig[key]}`;
 
     parkingViewElement?.style.setProperty(`--${thisKey}`, `calc(${sizeConfig[key]}px * var(--parkingZoom))`);
+
+    if(key === "parkingViewWidth" || key === "parkingViewHeight") {
+      srcResizeVideoCanvas();
+    }
   });
 });
 
