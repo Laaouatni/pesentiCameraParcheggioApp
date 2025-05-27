@@ -29,7 +29,7 @@ body {
   width: 100%;
 }
 
-@media (max-height: 505px) and (min-width: 700px) {
+@media (min-width: 900px) {
   body {
     flex-direction: row;
   }
@@ -38,7 +38,7 @@ body {
   }
 }
 
-@media (max-height: 505px) and (max-width: 700px) {
+@media (max-height: 780px) {
   #controlsElement {
     display: none;
   }
