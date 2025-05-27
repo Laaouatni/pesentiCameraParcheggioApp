@@ -1,0 +1,15 @@
+#sizeInputsContainer {
+  display: grid;
+  gap: 0.5rem;
+  padding: 0.5rem;
+  background-color: rgba(0, 0, 0, 0.154);
+}
+
+.sizeInputDiv {
+  display: flex;
+  gap: 1rem;
+}
+
+.sizeInputDiv input[type="range"] {
+  flex: 1;
+}
