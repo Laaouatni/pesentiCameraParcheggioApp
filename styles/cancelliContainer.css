@@ -1,9 +1,17 @@
 #cancelliContainer {
   --slotColor: red;
   margin-top: var(--sizeConfig-distanceSlotCancello);
-  outline: 1px solid red;
   z-index: 1;
   display: flex;
   justify-content: center;
   gap: var(--sizeConfig-gapCancelli);
 }
+
+.cancelloItem {
+  width: var(--sizeConfig-cancelloWidth);
+  height: var(--sizeConfig-cancelloHeight);
+  border-width: var(--sizeConfig-slotSpessoreBordo);
+  border-style: solid;
+  border-color: var(--slotColor);
+  border-radius: var(--sizeConfig-slotRadius);
+};

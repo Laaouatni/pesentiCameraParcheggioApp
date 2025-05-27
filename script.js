@@ -23,6 +23,8 @@ let sizeConfig = {
   parkingViewHeight: 210,
   distanceSlotCancello: 20,
   gapCancelli: 30,
+  cancelloWidth: 70,
+  cancelloHeight: 20,
 };
 
 srcFullScreenBtn();
