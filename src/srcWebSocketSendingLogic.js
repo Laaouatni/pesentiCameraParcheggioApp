@@ -8,15 +8,32 @@ function srcWebSocketSendingLogic(ws) {
   const isWebSocketConnected = ws.readyState === WebSocket.OPEN;
   if (!isWebSocketConnected) return;
 
-  const thisFrameArrayToSendToEsp32String =
-    `slotsCameraInput:${thisFrameArrayToSendToEsp32["parkingItem"].join(",")}`;
-  const canSend =
-    thisFrameArrayToSendToEsp32String != previousFrameArrayStringToSendToEsp32;
+  const keys = {
+    slotsCameraInput: "parkingItem",
+    slotsCameraInputCancello: "cancelloItem",
+  };
 
-  if (!canSend) return;
+  Object.entries(keys).forEach(([key, value]) => {
+    const thisString = `${key}:${thisFrameArrayToSendToEsp32[value].join(",")}`;
+    const canSend =
+      thisString !== previousFrameArrayStringToSendToEsp32[value];
+    if (!canSend) return;
+    ws.send(thisString);
+    updatePreviousFrameArrayStringToSendToEsp32(value, thisString);
+  });
 
-  ws.send(thisFrameArrayToSendToEsp32String);
-  updatePreviousFrameArrayStringToSendToEsp32(thisFrameArrayToSendToEsp32String);
+  // const thisFrameArrayToSendToEsp32String = `slotsCameraInput:${thisFrameArrayToSendToEsp32[
+  //   "parkingItem"
+  // ].join(",")}`;
+  // const canSend =
+  //   thisFrameArrayToSendToEsp32String != previousFrameArrayStringToSendToEsp32;
+
+  // if (!canSend) return;
+
+  // ws.send(thisFrameArrayToSendToEsp32String);
+  // updatePreviousFrameArrayStringToSendToEsp32(
+  //   thisFrameArrayToSendToEsp32String,
+  // );
 }
 
 export { srcWebSocketSendingLogic };
