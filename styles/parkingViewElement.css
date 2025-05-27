@@ -20,7 +20,7 @@
 
 .parkingGroup {
   z-index: 2;
-  gap: var(--sizeConfig-gap);
+  gap: var(--sizeConfig-gapSlots);
 }
 
 #parkingGroupSinistra,

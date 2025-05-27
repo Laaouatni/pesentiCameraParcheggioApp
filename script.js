@@ -13,7 +13,7 @@ const ctx = srcCreateCtx();
 
 let sizeConfig = {
   parkingZoom: 1.3,
-  gap: 10,
+  gapSlots: 10,
   slotWidth: 35,
   slotHeight: 60,
   slotPadding: 16,
@@ -22,6 +22,7 @@ let sizeConfig = {
   parkingViewWidth: 297,
   parkingViewHeight: 210,
   distanceSlotCancello: 20,
+  gapCancelli: 30,
 };
 
 srcFullScreenBtn();
