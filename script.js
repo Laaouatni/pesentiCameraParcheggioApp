@@ -44,6 +44,9 @@ Object.entries(sizeConfig).forEach(([key, value]) => {
   thisInput.id = thisKey;
   thisLabel.htmlFor = thisKey;
   thisLabel.textContent = `${key}: ${value}`;
+  if(key === "parkingZoom") {
+    thisInput.step = "0.01";
+  }
 
   thisDiv?.appendChild(thisLabel);
   thisDiv?.appendChild(thisInput);
@@ -78,7 +81,7 @@ Object.entries(sizeConfig).forEach(([key, value]) => {
       );
     }
 
-    if (key === "parkingViewWidth" || key === "parkingViewHeight") {
+    if (key === "parkingViewWidth" || key === "parkingViewHeight" || key === "parkingZoom") {
       srcResizeVideoCanvas();
     }
   });
