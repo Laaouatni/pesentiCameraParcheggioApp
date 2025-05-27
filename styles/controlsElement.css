@@ -6,6 +6,10 @@
   font-family: Helvetica;
 }
 
+#controlsElement *[hidden="true"] {
+  display: none !important;
+}
+
 #riferimentiElement {
   display: grid;
   gap: 0.5rem;
@@ -31,4 +35,14 @@
 
 #inputConfigTolleranza {
   flex: 1;
+}
+
+#controlsButtonsContainer {
+  display: flex;
+  gap: 0.5rem;
+}
+
+#controlsButtonsContainer button {
+  flex: 1;
+  padding: 0.5rem;
 }

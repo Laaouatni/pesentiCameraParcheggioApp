@@ -30,7 +30,7 @@ let sizeConfig = {
 srcFullScreenBtn();
 srcDontTurnOffTheSite();
 srcActivateVideoCamera();
-// srcUpdateValueConfigInputs();
+srcUpdateValueConfigInputs();
 
 const sizeInputsContainer = document.querySelector("#sizeInputsContainer");
 

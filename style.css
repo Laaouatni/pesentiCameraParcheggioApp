@@ -37,9 +37,3 @@ body {
     flex: 1;
   }
 }
-
-/* @media (max-height: 780px) {
-  #controlsElement {
-    display: none;
-  }
-} */
