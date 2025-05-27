@@ -3,7 +3,7 @@ import { srcAnalyzeParkingSlot } from "./srcAnalyzeParkingSlot.js";
 import { parkingViewElement } from "../srcDomCostants.js";
 import { updateThisFrameArrayValueToSendToEsp32AtIndex } from "./srcFrameLogic.js";
 
-const cancelliItems = document.querySelectorAll(".cancello-item");
+const cancelliItems = document.querySelectorAll(".cancelloItem");
 
 /**
  *
