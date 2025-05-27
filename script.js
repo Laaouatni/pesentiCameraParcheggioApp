@@ -12,6 +12,7 @@ const ws = srcCreateWebSocketClient();
 const ctx = srcCreateCtx();
 
 let sizeConfig = {
+  parkingZoom: 1.3,
   gap: 10,
   slotWidth: 35,
   slotHeight: 60,
@@ -38,26 +39,46 @@ Object.entries(sizeConfig).forEach(([key, value]) => {
   thisDiv.className = "sizeInputDiv";
   thisInput.type = "range";
   thisInput.min = `${0}`;
-  thisInput.max = `${value * 2}`;
+  thisInput.max = `${value * 3}`;
   thisInput.value = `${value}`;
   thisInput.id = thisKey;
   thisLabel.htmlFor = thisKey;
   thisLabel.textContent = `${key}: ${value}`;
-  
+
   thisDiv?.appendChild(thisLabel);
   thisDiv?.appendChild(thisInput);
   sizeInputsContainer?.appendChild(thisDiv);
-  parkingViewElement?.style.setProperty(`--${thisKey}`, `calc(${sizeConfig[key]}px * var(--parkingZoom))`);
 
+  if (key === "parkingZoom") {
+    parkingViewElement?.style.setProperty(
+      `--${thisKey}`,
+      `${sizeConfig[key]}`,
+    );
+  } else {
+    parkingViewElement?.style.setProperty(
+      `--${thisKey}`,
+      `calc(${sizeConfig[key]}px * var(--sizeConfig-parkingZoom))`,
+    );
+  }
 
   thisInput.addEventListener("input", (event) => {
-    sizeConfig[key] = Number(event.target.value);
+    sizeConfig[key] = parseFloat(event.target.value);
     thisInput.value = sizeConfig[key];
     thisLabel.textContent = `${key}: ${sizeConfig[key]}`;
 
-    parkingViewElement?.style.setProperty(`--${thisKey}`, `calc(${sizeConfig[key]}px * var(--parkingZoom))`);
+    if (key === "parkingZoom") {
+      parkingViewElement?.style.setProperty(
+        `--${thisKey}`,
+        `${sizeConfig[key]}`,
+      );
+    } else {
+      parkingViewElement?.style.setProperty(
+        `--${thisKey}`,
+        `calc(${sizeConfig[key]}px * var(--sizeConfig-parkingZoom))`,
+      );
+    }
 
-    if(key === "parkingViewWidth" || key === "parkingViewHeight") {
+    if (key === "parkingViewWidth" || key === "parkingViewHeight") {
       srcResizeVideoCanvas();
     }
   });

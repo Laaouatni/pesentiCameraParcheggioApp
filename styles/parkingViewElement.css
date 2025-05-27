@@ -1,6 +1,5 @@
 
 #parkingViewElement {
-  --parkingZoom: 1.3;
   --slotColor: red;
   display: flex;
   position: relative;
