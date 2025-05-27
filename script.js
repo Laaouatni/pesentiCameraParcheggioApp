@@ -52,23 +52,17 @@ Object.entries(sizeConfig).forEach(([key, value]) => {
   thisDiv?.appendChild(thisInput);
   sizeInputsContainer?.appendChild(thisDiv);
 
-  if (key === "parkingZoom") {
-    parkingViewElement?.style.setProperty(
-      `--${thisKey}`,
-      `${sizeConfig[key]}`,
-    );
-  } else {
-    parkingViewElement?.style.setProperty(
-      `--${thisKey}`,
-      `calc(${sizeConfig[key]}px * var(--sizeConfig-parkingZoom))`,
-    );
-  }
+  updateCssVariables();
 
   thisInput.addEventListener("input", (event) => {
     sizeConfig[key] = parseFloat(event.target.value);
     thisInput.value = sizeConfig[key];
     thisLabel.textContent = `${key}: ${sizeConfig[key]}`;
+    
+    updateCssVariables();
+  });
 
+  function updateCssVariables() {
     if (key === "parkingZoom") {
       parkingViewElement?.style.setProperty(
         `--${thisKey}`,
@@ -84,8 +78,9 @@ Object.entries(sizeConfig).forEach(([key, value]) => {
     if (key === "parkingViewWidth" || key === "parkingViewHeight" || key === "parkingZoom") {
       srcResizeVideoCanvas();
     }
-  });
+  }
 });
+
 
 videoElement.addEventListener("playing", () => {
   if (!ctx) throw new Error("ctx is not defined");
