@@ -13,6 +13,13 @@
   height: var(--sizeConfig-parkingViewHeight);
 }
 
+#parkingGroupContainer {
+  width: var(--sizeConfig-parkingW);
+  height: var(--sizeConfig-parkingH);
+  position: absolute;
+  transform: translateX(var(--sizeConfig-parkingX)) translateY(var(--sizeConfig-parkingY));
+}
+
 #canvasElement {
   position: absolute;
   z-index: 0;
