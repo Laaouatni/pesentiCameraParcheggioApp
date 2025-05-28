@@ -25,6 +25,10 @@ let sizeConfig = {
   gapCancelli: 30,
   cancelloWidth: 70,
   cancelloHeight: 20,
+  parkingW: 297,
+  parkingH: 210,
+  parkingX: 0,
+  parkingY: 0,
 };
 
 srcFullScreenBtn();
