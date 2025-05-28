@@ -12,7 +12,7 @@ const ws = srcCreateWebSocketClient();
 const ctx = srcCreateCtx();
 
 let sizeConfig = {
-  parkingZoom: 1.3,
+  parkingZoom: 0.75,
   gapSlots: 10,
   slotWidth: 35,
   slotHeight: 60,
