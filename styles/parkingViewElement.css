@@ -4,19 +4,18 @@
   display: grid;
   position: relative;
   z-index: 1;
+  width: var(--sizeConfig-parkingViewWidth);
+  /* height: var(--sizeConfig-parkingViewHeight); */
 }
 
 #parkingGroupContainer {
   display: flex;
   justify-content: space-between;
-  width: var(--sizeConfig-parkingViewWidth);
-  height: var(--sizeConfig-parkingViewHeight);
 }
 
 #parkingGroupContainer {
   width: var(--sizeConfig-parkingW);
   height: var(--sizeConfig-parkingH);
-  position: absolute;
   transform: translateX(var(--sizeConfig-parkingX)) translateY(var(--sizeConfig-parkingY));
 }
 

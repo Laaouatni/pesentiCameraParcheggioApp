@@ -4,7 +4,6 @@ function srcResizeVideoCanvas() {
   if (!canvasElement) throw new Error("canvasElement is not defined");
   if (!parkingViewElement) throw new Error("parkingViewElement is not defined");
 
-  console.log(parkingViewElement.clientWidth, parkingViewElement.clientHeight);
   canvasElement.width = parkingViewElement.clientWidth;
   canvasElement.height = parkingViewElement.clientHeight;
 }
