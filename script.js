@@ -79,7 +79,8 @@ Object.entries(sizeConfig).forEach(([key, value]) => {
     }
 
     // if (key === "parkingViewWidth" || key === "parkingViewHeight" || key === "parkingZoom") {
-      srcResizeVideoCanvas();
+    srcResizeVideoCanvas();
+    srcActivateVideoCamera();
     // }
   }
 });
